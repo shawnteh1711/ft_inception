@@ -1,6 +1,6 @@
 COMPOSE_YML = ./srcs/docker-compose.yml
 WORDPRESS_SRCS = /home/shawn/data/wordpress
-MARIADB_SRCS = /home/shawn/data/wordpressdb
+MARIADB_SRCS = /home/shawn/data/mariadb
 DOCKER_USERNAME ?= shawnteh
 APPLICATION_NAME ?= hello-world
 GIT_HASH ?= $(shell git log --format="%h" -n 1)
