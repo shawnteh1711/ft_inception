@@ -18,6 +18,22 @@ Docker Container is a standalone executable software package which includes appl
 Docker Registry is an open source server-size service for hosting and distributing images.
 Once a Docker Image is built, it's uploaded in a registry or a Docker Hub.
 
+## Common Dockerfile Command
+```
+Environment variables are supported by the following list of instructions in the Dockerfile:
+ADD
+COPY
+ENV
+EXPOSE
+FROM
+LABEL
+STOPSIGNAL
+USER
+VOLUME
+WORKDIR
+ONBUILD (when combined with one of the supported instructions above)
+```
+
 ## Resouces
 1. [Docker Tutorial](https://www.youtube.com/watch?v=rOTqprHv1YE)
 2. [Docker Makefile](https://earthly.dev/blog/docker-and-makefiles/)
