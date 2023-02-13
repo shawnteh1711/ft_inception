@@ -46,3 +46,5 @@ COPY ./tools/mariadb_setup.sh .
 #run database setup script
 CMD ["bash", "mariadb_setup.sh"]
 
+# end  
+

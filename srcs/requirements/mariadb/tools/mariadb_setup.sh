@@ -54,3 +54,5 @@ echo "===============STARTING MARIADB SERVICE================"
 
 # mysqld_safe --skip-syslog --log-error=logs. scrapped, need root and does not allow me to input pw
 exec mysqld --user=mysql --console
+
+# end
