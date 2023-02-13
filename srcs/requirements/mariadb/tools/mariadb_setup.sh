@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if there is mysql default files
-if [ -d "/var/lib/mysql/mysql"]; then
+if [ -d "/var/lib/mysql/mysql" ]; then
     echo "[INFO] mysql is already initialized..."
 else
     mysql_install_db --datadir=/var/lib/mysql
