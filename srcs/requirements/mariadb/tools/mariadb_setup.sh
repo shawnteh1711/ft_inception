@@ -5,6 +5,7 @@ if [ -d "/var/lib/mysql/mysql" ]; then
     echo "[INFO] mysql is already initialized..."
 else
     mysql_install_db --datadir=/var/lib/mysql
+    chown -R mysql:root /var/lib/mysql
 
     # Create bootstrap file
     echo \ 
