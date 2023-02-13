@@ -21,7 +21,7 @@ RUN chmod +x ./mariadb_setup.sh
 EXPOSE 3306
 
 # Define the entry point command
-ENTRYPOINT ["./mariadb_setup.sh"]
+ENTRYPOINT ["bash", "./mariadb_setup.sh"]
 
 # end  
 
