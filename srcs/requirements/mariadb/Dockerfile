@@ -2,6 +2,9 @@
 # FROM mariadb:latest
 FROM debian:buster
 
+RUN apt-get update
+RUN apt-get install -y mariadb-server
+
 # Set the environment variables for MariaDB
 ENV MYSQL_ROOT_PASSWORD=rootpassword
 ENV MYSQL_DATABASE=mydb
