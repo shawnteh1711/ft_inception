@@ -32,6 +32,13 @@ USER
 VOLUME
 WORKDIR
 ONBUILD (when combined with one of the supported instructions above)
+
+```
+
+## Docker exec
+``` 
+docker exec -it <container_id> <arg>
+mysql -proot
 ```
 
 ## Resouces
