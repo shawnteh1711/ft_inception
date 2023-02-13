@@ -1,5 +1,6 @@
 # Use the official MariaDB image as the base imageadd t
-FROM mariadb:latest
+# FROM mariadb:latest
+FROM debian:buster
 
 # Set the environment variables for MariaDB
 ENV MYSQL_ROOT_PASSWORD=rootpassword
