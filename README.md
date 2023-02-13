@@ -37,6 +37,7 @@ ONBUILD (when combined with one of the supported instructions above)
 
 ## Docker exec
 ``` 
+docker run -it --rm <image>
 docker exec -it <container_id> <arg>
 mysql -proot
 ```
