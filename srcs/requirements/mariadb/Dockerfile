@@ -27,23 +27,22 @@
 # # Start MariaDB when the container is run
 # CMD ["mysqld"]
 
+#base image
 FROM debian:buster
 
-# Create working directory
-RUN mkdir -p /mariaDB
-WORKDIR /mariaDB
+#install mariadb
+RUN apt update
+RUN apt install -yqq mariadb-server
 
-# Install necessary tools
-RUN apt-get update && apt-get install -y \
-vim mariadb-server procps gettext-base 
+#expose port 3306 for maraidb
+EXPOSE 3306
 
-# mysql
-COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+#copy database setup script
+COPY ./tools/mariadb_setup.sh .
 
-COPY tools/script.sql.template /mariaDB/script.sql.template  
-COPY tools/entrypoint.sh .	 
-RUN chmod 755 /mariaDB/entrypoint.sh
+#copy my config
+# COPY ./conf/my.cnf /etc/mysql/my.cnf
 
-# RUN mysql_install_db
-ENTRYPOINT [ "/mariaDB/entrypoint.sh" ] 
-CMD ["mysqld_safe"]
+#run database setup script
+CMD ["bash", "mariadb_setup.sh"]
+
