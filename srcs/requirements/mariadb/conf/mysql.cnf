@@ -1,22 +1,8 @@
-#[mysqld]
-#user = root
-#port = 3306
-#datadir = /var/lib/mysql
-#socket = /var/run/mysqld/mysqld.sock
-#skip-networking = false
-#skip-bind-addressQ
-#bind-address = 0.0.0.0
-
-# The MariaDB configuration files
-
-[client-server]
-# Import all .cnf files from configuration directory
-!includedir /etc/mysql/conf.d/
-!includedir /etc/mysql/mariadb.conf.d/
-
 [mysqld]
-#datadir=/docker_mysqldata
-skip-networking=0
+user = root
+port = 3306
+datadir = /var/lib/mysql
+socket = /var/run/mysqld/mysqld.sock
+skip-networking = false
 skip-bind-address
-#tmpdir=/your/new/temp
-
+#bind-address = 0.0.0.0
