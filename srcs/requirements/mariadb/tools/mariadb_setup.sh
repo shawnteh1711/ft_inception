@@ -6,7 +6,7 @@ if [ -d "/var/lib/mysql/mysql" ]; then
 else
     mysql_install_db --datadir=/var/lib/mysql
 
-    chown -R mysql:root /var/lib/mysql
+    # chown -R mysql:root /var/lib/mysqlQ
 
     # Create bootstrap file
     echo 
@@ -28,5 +28,4 @@ else
 fi
 
 # Run command in Dockerfile
-# exec "$@"
-exec mysqld --user=mysql --console
+exec "$@"
