@@ -1,12 +1,12 @@
 # Use the official MariaDB image as the base imageadd t
 FROM debian:buster
 
+# Install mariadb server
+RUN apt-get update && apt-get install -y mariadb-server
+
 # Make directory for mysql Unix socket authentication plugin
 RUN chown -R mysql:root /var/lib/mysql
 RUN mkdir -p /run/mysqld && chown -R mysql:root /run/mysqld
-
-# Install mariadb server
-RUN apt-get update && apt-get install -y mariadb-server
 
 # Copy the database initialization script to the container
 COPY ./tools/mariadb_setup.sh .
