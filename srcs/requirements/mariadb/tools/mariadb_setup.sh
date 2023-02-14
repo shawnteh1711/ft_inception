@@ -28,4 +28,5 @@ else
 fi
 
 # Run command in Dockerfile
-exec "$@"
+# exec "$@"
+exec mysqld --user=mysql --console
