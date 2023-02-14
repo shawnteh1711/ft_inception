@@ -43,4 +43,4 @@ COPY ./tools/mariadb_setup.sh .
 COPY ./conf/mysql.cnf /etc/mysql/mysql.cnf
 
 #run database setup script
-CMD ["bash", "db-setup.sh"]
+CMD ["bash", "mariadb_setup.sh"]
