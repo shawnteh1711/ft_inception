@@ -36,10 +36,14 @@ ONBUILD (when combined with one of the supported instructions above)
 ```
 
 ## Docker exec
-``` 
+```
+docker build -t <name> .
 docker run -it --rm <image>
+docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d docker.io/library/mariadb:10.2
+
 docker exec -it <container_id> <arg>
 mysql -proot
+docker ps
 ```
 
 ## Resouces
