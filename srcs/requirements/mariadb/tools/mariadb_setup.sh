@@ -9,7 +9,7 @@ else
     chown -R mysql:root /var/lib/mysql
 
     # Create bootstrap file
-    echo \ 
+    echo 
     "
     USE mysql;
     FLUSH PRIVILEGES;
@@ -21,8 +21,7 @@ else
     SELECT user from mysql.user;
     ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';
     FLUSH PRIVILEGES;
-    "\
-    > temp.sql
+    " > temp.sql
 
     # Insert boostrap file into db as mysql user
     mysqld --user=mysql --bootstrap < temp.sql
