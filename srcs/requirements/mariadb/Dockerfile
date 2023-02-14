@@ -37,7 +37,7 @@ RUN apt install -yqq nano
 EXPOSE 3306
 
 #copy database setup script
-COPY ./conf/db-setup.sh .
+COPY ./conf/mariadb_setup.sh .
 
 #copy my config
 COPY ./conf/mysql.cnf /etc/mysql/mysql.cnf
