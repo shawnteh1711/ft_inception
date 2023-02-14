@@ -9,7 +9,7 @@ RUN mkdir -p /run/mysqld && chown -R mysql:root /run/mysqld
 
 # Copy the database initialization script to the container
 COPY ./tools/mariadb_setup.sh .
-COPY ./conf/mysql.cnf /etc/mysql/mysql.cnf
+COPY ./conf/my.cnf /etc/mysql/my.cnf
 
 # Make the mariadb_setup.sh file executable
 RUN chmod +x ./mariadb_setup.sh
