@@ -11,7 +11,7 @@ else
     # Create bootstrap file
     echo \ 
     "
-    # USE mysql
+    USE mysql;
     FLUSH PRIVILEGES;
     CREATE USER IF NOT EXISTS '$MYSQL_ADMIN'@'%' IDENTIFIED BY '$MYSQL_ADMIN_PASSWORD';
     CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';
@@ -21,7 +21,8 @@ else
     SELECT user from mysql.user;
     ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';
     FLUSH PRIVILEGES;
-    " > temp.sql
+    "\
+    > temp.sql
 
     # Insert boostrap file into db as mysql user
     mysqld --user=mysql --bootstrap < temp.sql
