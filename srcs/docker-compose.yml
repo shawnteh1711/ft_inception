@@ -42,11 +42,14 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - mariadb_srcs:/var/www/html
+      - mariadb_srcs:/var/lib/mysql
+      # - mariadb_srcs:/var/www/html
     networks:
       - default_network
-    depends_on:
-      - wordpress
+    # depends_on:
+    #   - wordpress
+    env_file:
+      - .env
     restart: always
 
 
