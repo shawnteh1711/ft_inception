@@ -70,6 +70,7 @@ docker network ls
 docker build -t <name> .
 docker history imagename
 docker run -it --rm <image>
+docker run -d maria --name maria_c -p 3306:3306 maria
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d docker.io/library/mariadb:10.2
 ```
 
