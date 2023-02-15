@@ -75,6 +75,7 @@ docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d dock
 ```
 
 ### Docker exec
+```
 docker exec -it <container_id> <arg>
 mysql -proot
 docker ps
