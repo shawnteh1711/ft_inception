@@ -2,10 +2,12 @@
 FROM debian:buster
 
 # Install mariadb server
-RUN apt-get update && apt-get install -y mariadb-server
+RUN apt-get update && \
+    apt-get install -y mariadb-server && \
+    rm -rf /var/lib/apt/list/*
 
 # Make directory for mysql Unix socket authentication plugin
-RUN chown -R mysql:root /var/lib/mysql
+# RUN chown -R mysql:root /var/lib/mysql
 RUN mkdir -p /run/mysqld && chown -R mysql:root /run/mysqld
 
 # Copy the database initialization script to the container

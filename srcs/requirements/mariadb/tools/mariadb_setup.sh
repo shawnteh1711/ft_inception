@@ -4,9 +4,10 @@
 if [ -d "/var/lib/mysql/mysql" ]; then
     echo "[INFO] mysql is already initialized..."
 else
+    # initializa sql database and specifies the location where data files will be stored
     mysql_install_db --datadir=/var/lib/mysql
 
-    # chown -R mysql:root /var/lib/mysqlQ
+    chown -R mysql:root /var/lib/mysql
 
     # Create bootstrap file
     echo 
@@ -23,7 +24,10 @@ else
     FLUSH PRIVILEGES;
     " > temp.sql
 
-    # Insert boostrap file into db as mysql user
+    # Insert boostrap file into db as mysql user using mysqld daemon to run mysql server. 
+    # A daemon is a program that runs in background and procide some service for other programs or user.
+    # Bootstap mode allow sql server started with a specific SQL script and execute the commands from script
+    # and then shut down. This simplifies the initialization process
     mysqld --user=mysql --bootstrap < temp.sql
 fi
 
