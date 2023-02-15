@@ -15,7 +15,8 @@ services:
       - default_network
     depends_on:
       - wordpress
-    restart: always
+    restart: on-failure
+
 
   wordpress:
     container_name: wordpress-container
@@ -31,7 +32,8 @@ services:
       - default_network
     depends_on:
       - mariadb
-    restart: always
+    restart: on-failure
+
 
   mariadb:
     container_name: mariadb-container
@@ -50,7 +52,8 @@ services:
     #   - wordpress
     env_file:
       - .env
-    restart: always
+    restart: on-failure
+
 
 
 

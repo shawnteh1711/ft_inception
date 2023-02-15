@@ -1,10 +1,10 @@
-# Use the official MariaDB image as the base imageadd t
-FROM debian:buster
+# Use the official debian image as the base imageadd t
+FROM debian:bullseye-slim
 
 # Install mariadb server
 RUN apt-get update && \
-    apt-get install -y mariadb-server && \
-    rm -rf /var/lib/apt/list/*
+        apt-get install -yqq mariadb-server && \
+            rm -rf /var/lib/apt/list/*
 
 # Make directory for mysql Unix socket authentication plugin
 # RUN chown -R mysql:root /var/lib/mysql

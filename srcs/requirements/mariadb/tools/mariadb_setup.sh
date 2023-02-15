@@ -11,7 +11,6 @@ else
 
     # sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
 
-
     # Create bootstrap file
     echo 
     "
@@ -32,7 +31,7 @@ else
     " > temp.sql
 
     # Insert boostrap file into db as mysql user using mysqld daemon to run mysql server. 
-    # A daemon is a program that runs in background and procide some service for other programs or user.
+    # A daemon is a program that runs in background and provide some service for other programs or user.
     # Bootstap mode allow sql server started with a specific SQL script and execute the commands from script
     # and then shut down. This simplifies the initialization process
     mysqld --user=mysql --bootstrap < temp.sql
