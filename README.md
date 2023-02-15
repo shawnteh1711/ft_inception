@@ -60,6 +60,11 @@ docker push shawnteh/maria:23-02-15
 docker service create --name mymaria --replicas 3 -p 3302:3306 shawnteh/maria:23-02-15
 ```
 
+## Docker volume
+```
+docker volume ls
+```
+
 ## Docker network
 ```
 docker network ls
