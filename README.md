@@ -32,15 +32,48 @@ USER
 VOLUME
 WORKDIR
 ONBUILD (when combined with one of the supported instructions above)
-
 ```
 
-## Docker exec
+## Docker basic
+```
+docker login
+docker tag maria:latest shawnteh/maria:23-02-15
+docker push shawnteh/maria:23-02-15
+```
+
+## Docker swarm
+```
+docker swarm init --advertise -addr 192.168.0.13
+docker node ls
+docker inspect node
+```
+
+## Docker basic
+```
+docker login
+docker tag maria:latest shawnteh/maria:23-02-15
+docker push shawnteh/maria:23-02-15
+```
+
+## Docker service
+```
+docker service create --name mymaria --replicas 3 -p 3302:3306 shawnteh/maria:23-02-15
+```
+
+## Docker network
+```
+docker network ls
+```
+
+## Docker build and run
 ```
 docker build -t <name> .
+docker history imagename
 docker run -it --rm <image>
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d docker.io/library/mariadb:10.2
+```
 
+### Docker exec
 docker exec -it <container_id> <arg>
 mysql -proot
 docker ps
