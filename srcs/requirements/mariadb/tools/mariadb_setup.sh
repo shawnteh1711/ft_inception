@@ -5,8 +5,7 @@ if [ -d "/var/lib/mysql/mysql" ]; then
     echo "[INFO] mysql is already initialized..."
 else
     # initializa sql database and specifies the location where data files will be stored
-    mysql_install_db --datadir=/var/lib/mysql --user=mysql
-
+    mysql_install_db --datadir=/var/lib/mysql
     chown -R mysql:root /var/lib/mysql
 
     # sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
