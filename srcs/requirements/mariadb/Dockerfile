@@ -37,6 +37,8 @@ ENV MYSQL_DATABASE="mydb"
 
 ENV MYSQL_USER="myuser"
 
+ENV MYSQL_PASSWORD="mypassword"
+
 
 # Define the entry point command for initialization
 ENTRYPOINT ["./mariadb_setup.sh"]
