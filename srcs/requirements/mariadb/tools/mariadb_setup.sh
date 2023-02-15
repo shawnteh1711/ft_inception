@@ -9,7 +9,7 @@ else
 
     chown -R mysql:root /var/lib/mysql
 
-    sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
+    # sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 
     # Create bootstrap file
@@ -18,8 +18,8 @@ else
     USE mysql;
     FLUSH PRIVILEGES;
     # Create a user with remote access privileges
-    mysql -u root -p$MYSQL_ROOT_PASSWORD -e "CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypassword';"
-    mysql -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%';"
+    # mysql -u root -p$MYSQL_ROOT_PASSWORD -e "CREATE USER 'myuser'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';"
+    # mysql -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%';"
 
     CREATE USER IF NOT EXISTS '$MYSQL_ADMIN'@'%' IDENTIFIED BY '$MYSQL_ADMIN_PASSWORD';
     CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';
