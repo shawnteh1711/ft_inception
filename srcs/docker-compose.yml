@@ -73,7 +73,7 @@ volumes:
       type: none
       device: "/home/shawn/data/mariadb"
       o: bind
-      init: true
+      # init: true
       # source: /home/shawn/data/mariadb
       # target: /var/lib/mysql
 
