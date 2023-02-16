@@ -63,14 +63,14 @@ volumes:
     driver: local
     driver_opts:
       type: bind
-      options: bind
+      o: bind
       source: /home/shawn/data/wordpress
       target: /var/www/html
   mariadb_srcs:
     driver: local
     driver_opts:
       type: bind
-      options: bind
+      o: bind
       source: /home/shawn/data/mariadb
       target: /var/lib/mysql
 
