@@ -4,9 +4,7 @@
 # if [ ! -d "/var/lib/mysql/mysql/" ]; then
     # initializa sql database and specifies the location where data files will be stored
     mysql_install_db --datadir=/var/lib/mysql
-    # chown -R mysql:root /var/lib/mysql
-    mkdir -p /run/mysqld
-    chown -R mysql:mysql /run/mysqld
+    chown -R mysql:root /var/lib/mysql
 
     # Create bootstrap file
     echo 
