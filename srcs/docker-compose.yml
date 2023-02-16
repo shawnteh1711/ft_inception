@@ -72,7 +72,7 @@ volumes:
       type: bind
       options: bind
       source: /home/shawn/data/mariadb
-      target: /var/www/html
+      target: /var/lib/mysql
 
 
 
