@@ -72,7 +72,9 @@ volumes:
       # type: bind
       type: none
       o: bind
-      device: ${PWD}/mariadb
+      device: /home/shawn/data/mariadb
+      o: mkdir-if-not-exists
+
       # init: true
       # source: /home/shawn/data/mariadb
       # target: /var/lib/mysql
