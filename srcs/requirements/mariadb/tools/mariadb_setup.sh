@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if there is mysql default files
-if [ ! -d "/var/lib/mysql/mysql"]; then
+if [ ! -d "/var/lib/mysql/mysql" ]; then
     # initializa sql database and specifies the location where data files will be stored
     mysql_install_db --datadir=/var/lib/mysql
     chown -R mysql:root /var/lib/mysql
@@ -11,10 +11,6 @@ if [ ! -d "/var/lib/mysql/mysql"]; then
     "
     USE mysql;
     FLUSH PRIVILEGES;
-    # Create a user with remote access privileges
-    # mysql -u root -p$MYSQL_ROOT_PASSWORD -e "CREATE USER 'myuser'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';"
-    # mysql -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%';"
-
     CREATE USER IF NOT EXISTS '$MYSQL_ADMIN'@'%' IDENTIFIED BY '$MYSQL_ADMIN_PASSWORD';
     CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';
     CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE;
