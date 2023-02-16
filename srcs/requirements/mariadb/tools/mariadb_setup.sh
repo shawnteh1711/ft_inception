@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Check if there is mysql default files
-if [ ! -d "/var/lib/mysql/mysql/" ]; then
+# if [ ! -d "/var/lib/mysql/mysql/" ]; then
     # initializa sql database and specifies the location where data files will be stored
-    mysql_install_db --datadir=/var/lib/mysql
-    chown -R mysql:root /var/lib/mysql
+    # mysql_install_db --datadir=/var/lib/mysql
+    # chown -R mysql:root /var/lib/mysql
 
     # Create bootstrap file
     echo 
@@ -26,9 +26,9 @@ if [ ! -d "/var/lib/mysql/mysql/" ]; then
     # Bootstap mode allow sql server started with a specific SQL script and execute the commands from script
     # and then shut down. This simplifies the initialization process
     mysqld --user=mysql --bootstrap < temp.sql
-else
-    echo "[INFO] mysql is already initialized..."
-fi
+# else
+#     echo "[INFO] mysql is already initialized..."
+# fi
 
 # Run command in Dockerfile
 exec "$@"
