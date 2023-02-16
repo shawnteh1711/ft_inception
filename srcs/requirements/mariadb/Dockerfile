@@ -12,7 +12,7 @@ RUN mkdir -p /run/mysqld && chown -R mysql:root /run/mysqld
 
 # Copy the database initialization script to the container
 COPY ./tools/mariadb_setup.sh .
-COPY ./conf/my.cnf /etc/mysql/my.cnf
+# COPY ./conf/my.cnf /etc/mysql/my.cnf
 
 # Updates the MySQL/MariaDB configuration file to replace string 127.0.0.1 with 0.0.0.0 
 # effectively making the server listen on all available network interfaces.
