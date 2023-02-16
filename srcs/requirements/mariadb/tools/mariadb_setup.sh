@@ -3,8 +3,10 @@
 # Check if there is mysql default files
 # if [ ! -d "/var/lib/mysql/mysql/" ]; then
     # initializa sql database and specifies the location where data files will be stored
-    # mysql_install_db --datadir=/var/lib/mysql
+    mysql_install_db --datadir=/var/lib/mysql
     # chown -R mysql:root /var/lib/mysql
+    mkdir -p /run/mysqld
+    chown -R mysql:mysql /run/mysqld
 
     # Create bootstrap file
     echo 
