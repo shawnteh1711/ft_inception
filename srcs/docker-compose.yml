@@ -69,9 +69,11 @@ volumes:
   mariadb_srcs:
     driver: local
     driver_opts:
-      type: bind
+      # type: bind
+      type: none
       o: bind
       device: "/home/shawn/data/mariadb"
+      init: true
       # source: /home/shawn/data/mariadb
       # target: /var/lib/mysql
 
