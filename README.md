@@ -69,6 +69,9 @@ docker volume ls
 ## Docker network
 ```
 docker network ls
+docker network create -d bridge my_bridge
+docker run -d --net=my_bridge --name container
+
 ```
 
 ## Docker build and run
@@ -92,3 +95,4 @@ docker ps
 2. [Docker Makefile](https://earthly.dev/blog/docker-and-makefiles/)
 3. [Reference](https://github.com/twagger/inception)
 4. [Debian Docker installation](https://docs.docker.com/engine/install/debian/)
+5. [Nginx conf](https://www.plesk.com/blog/various/nginx-configuration-guide/#:~:text=Every%20NGINX%20configuration%20file%20will,interchangeably%20as%20blocks%20or%20contexts%20.)

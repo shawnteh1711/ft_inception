@@ -9,7 +9,7 @@ RUN apt-get update && \
             rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # # Copy default NGINX configuration
-# COPY nginx.conf /etc/nginx/nginx.conf
+COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
 # # Copy your NGINX configuration files
 # COPY conf.d/ /etc/nginx/conf.d/

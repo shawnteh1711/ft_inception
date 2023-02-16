@@ -26,7 +26,6 @@ RUN chmod +x ./mariadb_setup.sh
 EXPOSE 3306
 
 # Temporary env 
-
 ENV MYSQL_ADMIN="root"
 
 ENV MYSQL_ADMIN_PASSWORD="rootpassword"
