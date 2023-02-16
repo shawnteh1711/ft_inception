@@ -71,8 +71,8 @@ volumes:
     driver_opts:
       # type: bind
       type: none
-      device: "/home/shawn/data/mariadb"
       o: bind
+      device: "/home/shawn/data/mariadb"
       # init: true
       # source: /home/shawn/data/mariadb
       # target: /var/lib/mysql
