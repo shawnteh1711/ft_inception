@@ -16,8 +16,8 @@ COPY ./conf/my.cnf /etc/mysql/my.cnf
 
 # Updates the MySQL/MariaDB configuration file to replace string 127.0.0.1 with 0.0.0.0 
 # effectively making the server listen on all available network interfaces.
-# RUN sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
-COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+RUN sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
+# COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # Make the mariadb_setup.sh file executable
 RUN chmod +x ./mariadb_setup.sh
