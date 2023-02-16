@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if there is mysql default files
-if [ ! -d "/var/lib/mysql/mysql" ]; then
+if [ ! -d /var/lib/mysql/mysql/$MYSQL_DATABASE ]; then
     # initializa sql database and specifies the location where data files will be stored
     mysql_install_db --datadir=/var/lib/mysql
     chown -R mysql:root /var/lib/mysql
