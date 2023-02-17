@@ -44,8 +44,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      # - mariadb_srcs:/var/lib/mysql
-      - /home/shawn/data/mariadb:/var/lib/mysql
+      - mariadb_srcs:/var/lib/mysql
+      # - /home/shawn/data/mariadb:/var/lib/mysql
     networks:
       - default_network
     # depends_on:
@@ -70,9 +70,9 @@ volumes:
   mariadb_srcs:
     driver: local
     driver_opts:
-      type: bind
-      # type: none
-      o: bind,create
+      # type: bind
+      type: none
+      o: bind
       device: /home/shawn/data/mariadb
       # init: true
       # source: /home/shawn/data/mariadb
