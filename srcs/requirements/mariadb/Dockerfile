@@ -10,9 +10,6 @@ RUN apt-get update && \
 # RUN chown -R mysql:root /var/lib/mysql
 RUN mkdir -p /run/mysqld && chown -R mysql:mysql /run/mysqld
 
-# Create folder to store persistence data
-RUN mkdir -p /home/shawn/data/mariadb
-
 # Copy the database initialization script to the container
 COPY ./tools/mariadb_setup.sh .
 COPY ./conf/my.cnf /etc/mysql/my.cnf
