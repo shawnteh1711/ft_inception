@@ -44,6 +44,7 @@ services:
     ports:
       - 3306:3306
     volumes:
+      # - mariadb_srcs:/var/lib/mysql
       - mariadb_srcs:/var/lib/mysql
     networks:
       - default_network
@@ -72,6 +73,3 @@ volumes:
       type: none # create an anonymous volume with no pre-existing data
       o: bind
       device: /home/shawn/data/mariadb
-    driver_config:
-      options:
-        device: /home/shawn/data/mariadb
