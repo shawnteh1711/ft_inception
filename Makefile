@@ -43,7 +43,7 @@ docker_build:
 docker_push:
 			docker push $(container)
 
-docker_release"
+docker_release:
 			docker pull $(container)
 			docker tag $(container) $(DOCKER_USERNAME)/$(APPLICATION_NAME):latest
 			dockeR push $(DOCKER_USERNAME)/$(APPLICATION_NAME):latest 
