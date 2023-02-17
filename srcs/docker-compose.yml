@@ -69,6 +69,6 @@ volumes:
   mariadb_srcs:
     driver: local
     driver_opts:
-      type: none # create an anonymous volume with no pre-existing data
+      type: volume # create an anonymous volume with no pre-existing data
       o: bind
       device: /home/shawn/data/mariadb
