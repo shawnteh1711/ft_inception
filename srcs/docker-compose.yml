@@ -50,7 +50,7 @@ services:
     # depends_on:
     #   - wordpress
     env_file:
-      - ./.env
+      - .env
     restart: on-failure
 
 
