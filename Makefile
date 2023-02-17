@@ -2,9 +2,9 @@ COMPOSE_YML = ./srcs/docker-compose.yml
 WORDPRESS_SRCS = /home/shawn/data/wordpress
 MARIADB_SRCS = /home/shawn/data/mariadb
 DOCKER_USERNAME ?= shawnteh
-APPLICATION_NAME ?= hello-world
+APPLICATION_NAME ?= inception
 GIT_HASH ?= $(shell git log --format="%h" -n 1)
-container = $(DOCKER_USERNAME) / $(APPLICATION_NAME):$(GIT_HASH)
+container = $(DOCKER_USERNAME)/$(APPLICATION_NAME):$(GIT_HASH)
 
 .PHONY: all init build_up up down build clean fclean ps re docker_build docker_push docker_release
 
