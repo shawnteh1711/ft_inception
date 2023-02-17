@@ -44,7 +44,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - mariadb_srcs:/var/lib/mysql
+      # - mariadb_srcs:/var/lib/mysql
+      - /home/shawn/data/mariadb:/var/lib/mysql
     networks:
       - default_network
     # depends_on:
