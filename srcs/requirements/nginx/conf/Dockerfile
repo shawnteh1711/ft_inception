@@ -8,7 +8,7 @@ RUN apt-get update && \
         apt-get install -yqq nginx openssl && \
             rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# # Copy default NGINX configuration
+# Copy default NGINX configuration
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
 # # Copy your NGINX configuration files
