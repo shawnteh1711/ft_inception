@@ -3,7 +3,7 @@ FROM debian:bullseye-slim
 
 # Install necessary tools
 RUN apt-get update && \
-    apt-get install -yqq wget php-fpm php-mysql && \
+    apt-get install -yqq wget curl php-fpm php-mysql && \
         rm -rf /var/lib/apt/lists/* 
 
 # Download and install wp-cli
