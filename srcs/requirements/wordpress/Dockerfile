@@ -18,13 +18,13 @@ COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d
 COPY ./tools/wordpress_setup.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/wordpress_setup.sh
 
-# Change directory
+# Set working directory to /var/www/html
 WORKDIR /var/www/html/
 
 # Expose 9000 for fastcgi
 EXPOSE 9000
 
-# In case error php-fpm7.3 not found
+# To ensure php-fpm service can store its runtime data
 RUN mkdir -p /run/php
 
 # Set entry point to wordpress script
