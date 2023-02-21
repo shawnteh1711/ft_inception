@@ -20,7 +20,8 @@ WORKDIR /var/www/html/
 # Expose 9000 for fastcgi
 EXPOSE 9000
 
-ENTRYPOINT ["/usr/local/bin/wordpress_setup.sh"]
+# ENTRYPOINT ["/usr/local/bin/wordpress_setup.sh"]
+ENTRYPOINT ["./wordpress_setup.sh"]
 
 # Starting wp service at foreground
 CMD ["/usr/sbin/php-fpm7.3", "-F"]
