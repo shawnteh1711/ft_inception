@@ -18,13 +18,11 @@ RUN chmod +x ./tmp/ssl.sh
 # Expose the NGINX port (default is 443)
 EXPOSE 443
 
-ENTRYPOINT ["./tmp/ssl.sh"]
+# ENTRYPOINT ["./tmp/ssl.sh"]
 
 # Start NGINX server ny passed a global configuration option to start it in foreground and
 # prevent if from running as a background daemon process. This ensures that container
 # remains running and does not exit immediately after starting
-
-RUN echo "hiisdsf"
 
 CMD ["nginx", "-g", "daemon off;"]
 
