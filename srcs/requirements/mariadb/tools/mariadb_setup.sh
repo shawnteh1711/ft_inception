@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Check if there is mysql default files
 if [ ! -d /var/lib/mysql/$MYSQL_DATABASE ]; then

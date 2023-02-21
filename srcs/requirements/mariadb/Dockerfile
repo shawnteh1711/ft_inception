@@ -1,4 +1,4 @@
-# Use the official debian image as the base imageadd t
+# Use the official debian image as the base image
 FROM debian:bullseye-slim
 
 # Install mariadb server
