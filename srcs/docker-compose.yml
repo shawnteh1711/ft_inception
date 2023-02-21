@@ -31,8 +31,8 @@ services:
       - wordpress_srcs:/var/www/html
     networks:
       - default_network
-    # depends_on:
-    #   - mariadb
+    depends_on:
+      - mariadb
     restart: on-failure
 
 
@@ -48,8 +48,8 @@ services:
       - mariadb_srcs:/var/lib/mysql
     networks:
       - default_network
-    depends_on:
-      - wordpress
+    # depends_on:
+    #   - wordpress
     env_file:
       - .env
     restart: on-failure
