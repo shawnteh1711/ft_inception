@@ -12,19 +12,19 @@ RUN apt-get update && \
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
 # Copy generate ssl certificate with openssl using sh script
-COPY ./tools/ssl.sh /tmp/
-RUN chmod +x /tmp/ssl.sh
+COPY ./tools/ssl.sh ./tmp/
+RUN chmod +x ./tmp/ssl.sh
 
 # Expose the NGINX port (default is 443)
 EXPOSE 443
 
-# ENTRYPOINT ["/tmp/ssl.sh"]
+ENTRYPOINT ["./tmp/ssl.sh"]
 
 # Start NGINX server ny passed a global configuration option to start it in foreground and
 # prevent if from running as a background daemon process. This ensures that container
 # remains running and does not exit immediately after starting
-# CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
 
 
 # Run ssl.sh script to generate the SSL certificate and start nginx in the foreground
-CMD ["/bin/bash", "-c", "/tmp/ssl.sh && nginx -g 'daemon off;'"]
+# CMD ["/bin/bash", "-c", "/tmp/ssl.sh && nginx -g 'daemon off;'"]
