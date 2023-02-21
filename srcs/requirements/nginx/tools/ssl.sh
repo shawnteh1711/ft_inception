@@ -13,4 +13,6 @@ openssl req -x509 -nodes -newkey rsa:4096 \
 
 
 # Run the command passed as an argument to the script
-exec "$@"
+# exec "$@"
+# Start NGINX server
+nginx -t && service nginx start
