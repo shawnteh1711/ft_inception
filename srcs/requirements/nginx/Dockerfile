@@ -19,13 +19,13 @@ RUN chmod +x ./tmp/ssl.sh
 EXPOSE 443
 
 # ENTRYPOINT ["./tmp/ssl.sh"]
+RUN	openssl req -x509 -nodes -newkey rsa:4096 -keyout /etc/nginx/ssl/schuah.key -out /etc/nginx/ssl/schuah.crt -days 365 -subj "/C=MY/ST=Selangor/L=ShahAlam/O=42KL/OU=schuah/CN=schuah"
 
 # Start NGINX server ny passed a global configuration option to start it in foreground and
 # prevent if from running as a background daemon process. This ensures that container
 # remains running and does not exit immediately after starting
 
 CMD ["nginx", "-g", "daemon off;"]
-
 
 # Run ssl.sh script to generate the SSL certificate and start nginx in the foreground
 # CMD ["/bin/bash", "-c", "/tmp/ssl.sh && nginx -g 'daemon off;'"]
