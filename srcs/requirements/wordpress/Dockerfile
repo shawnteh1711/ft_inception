@@ -6,6 +6,11 @@ RUN apt-get update && \
     apt-get install -yqq wget php-fpm php-mysql && \
         rm -rf /var/lib/apt/lists/* 
 
+# Download and install wp-cli
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+    chmod +x wp-cli.phar && \
+        mv wp-cli.phar /usr/local/bin/wp
+
 # Copy default php fpm configuration
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
 
