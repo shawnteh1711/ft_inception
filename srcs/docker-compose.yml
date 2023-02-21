@@ -65,8 +65,7 @@ volumes:
     driver_opts:
       type: bind
       o: bind
-      source: /home/shawn/data/wordpress
-      target: /var/www/html
+      device: /home/shawn/data/wordpress
   mariadb_srcs:
     driver: local
     driver_opts:
