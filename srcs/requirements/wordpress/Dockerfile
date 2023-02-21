@@ -13,7 +13,7 @@ COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
 # COPY ./tools/wordpress_setup.sh .
 COPY ./tools/wordpress_setup.sh /usr/local/bin/
 # RUN chmod +x ./wordpress_setup.sh
-# RUN chmod +x /usr/local/bin/wordpress_setup.sh
+RUN chmod +x /usr/local/bin/wordpress_setup.sh
 
 WORKDIR /var/www/html/
 
