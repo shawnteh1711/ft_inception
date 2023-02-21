@@ -6,7 +6,7 @@ if [ ! -f ./wp-config.php ]; then
     wget http://wordpress.org/latest.tar.gz
 
     # Extract the wordpress archive
-    tar -xzvf lastest.tar.gz
+    tar -xzvf latest.tar.gz
 
     # Move the wordpress files to the web root directory
     mv wordpress/* .
