@@ -20,6 +20,9 @@ WORKDIR /var/www/html/
 # Expose 9000 for fastcgi
 EXPOSE 9000
 
+# In case error php-fpm7.3 not found
+RUN mkdir -p /run/php
+
 ENTRYPOINT ["/usr/local/bin/wordpress_setup.sh"]
 # ENTRYPOINT ["./wordpress_setup.sh"]
 
