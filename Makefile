@@ -27,11 +27,12 @@ clean: down
 		docker image prune -a -f
 		docker volume prune -f
 		docker network prune -f
+		
 	
 fclean: clean
 		rm -rf $(WORDPRESS_SRCS) $(MARIADB_SRCS)
 		docker system prune -a -f
-
+		docker volume rm $$(docker volume ls -q)
 ps:
 		docker-compose -f ($COMPOSE_YML) ps
 
