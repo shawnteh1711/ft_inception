@@ -18,7 +18,7 @@ if [ ! -f ./wp-config.php ]; then
     wp core download --allow-root
 
     # Configure wp
-    wp config create --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$$MYSQL_HOSTNAME --allow-root 
+    wp config create --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_HOSTNAME --allow-root 
 
     # Install wp
     wp core install --url=localhost --title="My blog" --admin_name=$MYSQL_ADMIN --admin_password=$MYSQL_ADMIN_PASSWORD --admin_email=you@example.com --allow-root
