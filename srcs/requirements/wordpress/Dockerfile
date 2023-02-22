@@ -32,4 +32,4 @@ RUN mkdir -p /run/php
 ENTRYPOINT ["/usr/local/bin/wordpress_setup.sh"]
 
 # Starting wp service at foreground
-CMD ["/usr/sbin/php-fpm7.4", "-F"]
+CMD ["/usr/sbin/php-fpm7.3", "-F"]
