@@ -11,7 +11,7 @@ container = $(DOCKER_USERNAME)/$(APPLICATION_NAME):$(GIT_HASH)
 all: build_up
 
 build_up:
-			mkdir -p $(WORDPRESS_SRCS) $(MARIADB_SRCS)
+			sudo mkdir -p $(WORDPRESS_SRCS) $(MARIADB_SRCS)
 			docker-compose -f $(COMPOSE_YML) up --build
 
 up:
@@ -30,7 +30,7 @@ clean: down
 		
 	
 fclean: clean
-		rm -rf $(WORDPRESS_SRCS) $(MARIADB_SRCS)
+		sudo rm -rf $(WORDPRESS_SRCS) $(MARIADB_SRCS)
 		docker system prune -a -f
 		docker volume rm $$(docker volume ls -q)
 ps:
