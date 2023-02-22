@@ -1,10 +1,11 @@
 # Use the official debian image as the base image
-FROM debian:bullseye-slim
+FROM debian:buster
 
 # Install necessary tools
 RUN apt-get update && \
-    apt-get install -yqq wget curl php-fpm php-mysql && \
-        rm -rf /var/lib/apt/lists/* 
+	apt-get upgrade -y && \
+                apt-get install -y wget curl php php-fpm php-mysql && \
+                        rm -rf /var/lib/apt/lists/*
 
 # Download and install wp-cli
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
