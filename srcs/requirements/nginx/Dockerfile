@@ -27,6 +27,3 @@ ENTRYPOINT ["./tmp/ssl.sh"]
 # remains running and does not exit immediately after starting
 
 CMD ["nginx", "-g", "daemon off;"]
-
-# Run ssl.sh script to generate the SSL certificate and start nginx in the foreground
-# CMD ["/bin/bash", "-c", "/tmp/ssl.sh && nginx -g 'daemon off;'"]
