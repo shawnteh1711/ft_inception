@@ -18,10 +18,14 @@ if [ ! -f ./wp-config.php ]; then
     wp core download --allow-root
 
     # Configure wp
-    wp config create --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_HOSTNAME --allow-root 
+    wp config create  --dbhost=$MYSQL_HOSTNAME --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --allow-root 
 
     # Install wp
-    wp core install --url=localhost --title="My blog" --admin_name=$MYSQL_ADMIN --admin_password=$MYSQL_ADMIN_PASSWORD --admin_email=you@example.com --allow-root
+    wp core install --url=$DOMAIN_NAME --title="My blog" --admin_name=$ADMIN_USER --admin_password=$ADMIN_PASSWD --admin_email=$ADMIN_EMAIL --allow-root
+
+    # Create user
+    wp user create $GENERAL_USER $GENERAL_EMAIL --user_pass=$GENERAL_PASSWD --allow-root
+
 
     sed -i "s/username_here/$MYSQL_USER/g" wp-config-sample.php
     sed -i "s/password_here/$MYSQL_PASSWORD/g" wp-config-sample.php
