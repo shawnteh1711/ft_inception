@@ -13,7 +13,9 @@ services:
     volumes:
       - wordpress_srcs:/var/www/html
     networks:
-      - default_network
+      # - default_network
+      default_network:
+          ipv4_address: 192.168.0.13
     depends_on:
       - wordpress
     restart: on-failure
@@ -30,7 +32,9 @@ services:
     volumes:
       - wordpress_srcs:/var/www/html
     networks:
-      - default_network
+      # - default_network
+      default_network:
+          ipv4_address: 192.168.0.14
     depends_on:
       - mariadb
     restart: on-failure
@@ -49,7 +53,9 @@ services:
       # - mariadb_srcs:/var/lib/mysql
       - /home/shawn/data/mariadb:/var/www/html
     networks:
-      - default_network
+      # - default_network
+      default_network:
+          ipv4_address: 192.168.0.15
     # depends_on:
     #   - wordpress
     env_file:
@@ -57,9 +63,20 @@ services:
     restart: on-failure
 
 
+# networks:
+#   default_network:
+#     driver: bridge
+    
 networks:
   default_network:
     driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.0.0/24
+          gateway: 192.168.0.1
+          ip_range: 192.168.0.0/24
+
 
 volumes:
   wordpress_srcs:
