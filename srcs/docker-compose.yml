@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.0'
 
 services:
   nginx:
@@ -44,6 +44,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3306:3306
+    user: root
     volumes:
       - mariadb_srcs:/var/lib/mysql
     networks:

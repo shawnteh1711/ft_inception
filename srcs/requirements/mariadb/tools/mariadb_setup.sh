@@ -3,7 +3,6 @@
 # Check if there is mysql default files
 if [ ! -d /var/lib/mysql/$MYSQL_DATABASE ]; then
     # initializa sql database and specifies the location where data files will be stored
-    # mysql_upgrade --datadir=/var/lib/mysql
     mysql_install_db --datadir=/var/lib/mysql
     chown -R mysql:mysql /var/lib/mysql
 
@@ -25,6 +24,7 @@ if [ ! -d /var/lib/mysql/$MYSQL_DATABASE ]; then
     # and then shut down. This simplifies the initialization process
     mysqld --user=mysql --bootstrap < temp.sql
 else
+    # mysql_upgrade --datadir=/var/lib/mysql
     echo "[INFO] mysql is already initialized..."
 fi
 
