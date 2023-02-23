@@ -15,7 +15,7 @@ services:
     networks:
       # - default_network
       default_network:
-          ipv4_address: 192.168.0.13
+          ipv4_address: 192.168.0.9
     depends_on:
       - wordpress
     restart: on-failure
@@ -34,7 +34,7 @@ services:
     networks:
       # - default_network
       default_network:
-          ipv4_address: 192.168.0.14
+          ipv4_address: 192.168.0.9
     depends_on:
       - mariadb
     restart: on-failure
@@ -55,7 +55,7 @@ services:
     networks:
       # - default_network
       default_network:
-          ipv4_address: 192.168.0.15
+          ipv4_address: 192.168.0.10
     # depends_on:
     #   - wordpress
     env_file:
