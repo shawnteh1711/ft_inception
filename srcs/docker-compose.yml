@@ -46,7 +46,8 @@ services:
       - 3306:3306
     user: root
     volumes:
-      - mariadb_srcs:/var/lib/mysql
+      # - mariadb_srcs:/var/lib/mysql
+      - /home/shawn/data/mariadb:/var/www/html
     networks:
       - default_network
     # depends_on:
