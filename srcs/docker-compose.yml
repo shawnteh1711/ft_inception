@@ -77,7 +77,6 @@ networks:
 #           gateway: 192.168.0.1
 #           ip_range: 192.168.0.0/24
 
-
 volumes:
   wordpress_srcs:
     driver: local
