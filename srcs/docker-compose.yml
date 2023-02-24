@@ -13,9 +13,9 @@ services:
     volumes:
       - wordpress_srcs:/var/www/html
     networks:
-      # - default_network
-      default_network:
-          ipv4_address: 192.168.0.8
+      - default_network
+      # default_network:
+      #     ipv4_address: 192.168.0.8
     depends_on:
       - wordpress
     restart: on-failure
@@ -32,9 +32,9 @@ services:
     volumes:
       - wordpress_srcs:/var/www/html
     networks:
-      # - default_network
-      default_network:
-          ipv4_address: 192.168.0.9
+      - default_network
+      # default_network:
+      #     ipv4_address: 192.168.0.9
     depends_on:
       - mariadb
     restart: on-failure
@@ -50,12 +50,12 @@ services:
       - 3306:3306
     user: root
     volumes:
-      # - mariadb_srcs:/var/lib/mysql
-      - /home/shawn/data/mariadb:/var/www/html
+      - mariadb_srcs:/var/lib/mysql
+      # - /home/shawn/data/mariadb:/var/www/html
     networks:
-      # - default_network
-      default_network:
-          ipv4_address: 192.168.0.10
+      - default_network
+      # default_network:
+      #     ipv4_address: 192.168.0.10
     # depends_on:
     #   - wordpress
     env_file:
@@ -63,19 +63,19 @@ services:
     restart: on-failure
 
 
-# networks:
-#   default_network:
-#     driver: bridge
-    
 networks:
   default_network:
     driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 192.168.0.0/24
-          gateway: 192.168.0.1
-          ip_range: 192.168.0.0/24
+    
+# networks:
+#   default_network:
+#     driver: bridge
+#     ipam:
+#       driver: default
+#       config:
+#         - subnet: 192.168.0.0/24
+#           gateway: 192.168.0.1
+#           ip_range: 192.168.0.0/24
 
 
 volumes:
