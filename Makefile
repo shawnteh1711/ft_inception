@@ -30,7 +30,7 @@ clean: down
 		
 	
 fclean: clean
-		sudo rm -rf $(WORDPRESS_SRCS) $(MARIADB_SRCS)
+		rm -rf $(WORDPRESS_SRCS) $(MARIADB_SRCS)
 		docker system prune -a -f
 		# docker volume rm $$(docker volume ls -q)
 ps:
