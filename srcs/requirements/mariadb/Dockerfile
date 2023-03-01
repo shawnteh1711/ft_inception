@@ -9,6 +9,7 @@ RUN apt-get update && \
 # Make directory for mysql Unix socket authentication plugin
 # RUN chown -R mysql:root /var/lib/mysql
 RUN mkdir -p /run/mysqld && chown -R mysql:mysql /run/mysqld
+RUN chmod 777 /run/mysqld
 
 # Copy the database initialization script to the container
 COPY ./tools/mariadb_setup.sh .
