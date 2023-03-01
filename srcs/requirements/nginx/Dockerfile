@@ -1,40 +1,29 @@
-# # Use the official debian image as the base image
-# FROM debian:bullseye-slim
+# Use the official debian image as the base image
+FROM debian:bullseye-slim
 
-# LABEL maintainer="NGINX Docker Maintainer <fongsiongshawn@gmail.com>"
+LABEL maintainer="NGINX Docker Maintainer <fongsiongshawn@gmail.com>"
 
-# # Install necessary tools
-# RUN apt-get update && \
-#         apt-get install -yqq nginx openssl && \
-#             rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Install necessary tools
+RUN apt-get update && \
+        apt-get install -yqq nginx openssl && \
+            rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# # Copy default NGINX configuration
-# COPY ./conf/nginx.conf /etc/nginx/nginx.conf
+# Copy default NGINX configuration
+COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
-# # Copy generate ssl certificate with openssl using sh script
-# COPY ./tools/ssl.sh ./tmp/
-# RUN chmod +x ./tmp/ssl.sh
+# Copy generate ssl certificate with openssl using sh script
+COPY ./tools/ssl.sh ./tmp/
+RUN chmod +x ./tmp/ssl.sh
 
-# # Expose the NGINX port (default is 443)
-# EXPOSE 443
+# Expose the NGINX port (default is 443)
+EXPOSE 443
 
-# ENTRYPOINT ["./tmp/ssl.sh"]
-# # RUN	mkdir -p /etc/nginx/ssl
-# # RUN	openssl req -x509 -nodes -newkey rsa:4096 -keyout /etc/nginx/ssl/shawn.key -out /etc/nginx/ssl/shawn.crt -days 365 -subj "/C=MY/ST=Selangor/L=ShahAlam/O=42KL/OU=shawn/CN=shawn"
+ENTRYPOINT ["./tmp/ssl.sh"]
+# RUN	mkdir -p /etc/nginx/ssl
+# RUN	openssl req -x509 -nodes -newkey rsa:4096 -keyout /etc/nginx/ssl/shawn.key -out /etc/nginx/ssl/shawn.crt -days 365 -subj "/C=MY/ST=Selangor/L=ShahAlam/O=42KL/OU=shawn/CN=shawn"
 
-# # Start NGINX server ny passed a global configuration option to start it in foreground and
-# # prevent if from running as a background daemon process. This ensures that container
-# # remains running and does not exit immediately after starting
+# Start NGINX server ny passed a global configuration option to start it in foreground and
+# prevent if from running as a background daemon process. This ensures that container
+# remains running and does not exit immediately after starting
 
-# CMD ["nginx", "-g", "daemon off;"]
-
-FROM	debian:buster
-RUN	apt-get update
-RUN	apt-get install -y nginx openssl vim
-RUN	mkdir -p /etc/nginx/ssl
-RUN	openssl req -x509 -nodes -newkey rsa:4096 -keyout /etc/nginx/ssl/schuah.key -out /etc/nginx/ssl/schuah.crt -days 365 -subj "/C=MY/ST=Selangor/L=ShahAlam/O=42KL/OU=schuah/CN=schuah"
-COPY	conf/nginx.conf /etc/nginx/nginx.conf
-RUN	sed -i 's/ssl_protocols	TLSv1 TLSv1.1 TLSv1.2;/ssl_protocols TLSv1.2 TLSv1.3;/g' /etc/nginx/nginx.conf
-RUN	mkdir -p /run/nginx
-EXPOSE	443
-CMD	["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
