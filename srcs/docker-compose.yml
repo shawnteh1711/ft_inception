@@ -74,6 +74,8 @@ services:
       - wordpress_srcs:/var/www/html
     networks:
       - default_network
+    depends_on:
+      - wordpress
     env_file:
       - .env
     restart: on-failure
