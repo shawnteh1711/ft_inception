@@ -42,6 +42,7 @@ if [ ! -f ./wp-config.php ]; then
     wp config set WP_REDIS_CLIENT phpredis --allow-root
     wp plugin install redis-cache --activate --allow-root
     wp plugin update --all --allow-root
+    wp plugin activate redis-cache --allow-root
     wp redis enable --allow-root
 
 else
