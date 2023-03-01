@@ -31,5 +31,5 @@ RUN mkdir -p /run/php
 # Set entry point to wordpress script
 ENTRYPOINT ["/usr/local/bin/wordpress_setup.sh"]
 
-# Starting wp service at foreground
+# Starting wp service at foreground and ifnore deamonize from conf file
 CMD ["/usr/sbin/php-fpm7.3", "-F"]
