@@ -1,6 +1,6 @@
 git pull
-docker build -t maria .
-docker stop mariac
-docker rm mariac
-docker run -d --name mariac maria
-docker exec -it mariac bash
+docker build -t redis .
+docker stop redisc
+docker rm redisc
+docker run -d --name redisc redis
+docker exec -it redisc bash
