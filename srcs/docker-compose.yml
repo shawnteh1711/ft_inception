@@ -56,8 +56,6 @@ services:
       - default_network
       # default_network:
       #     ipv4_address: 192.168.0.10
-    depends_on:
-      - wordpress
     env_file:
       - .env
     restart: on-failure
