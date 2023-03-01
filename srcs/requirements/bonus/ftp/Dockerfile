@@ -1,15 +1,25 @@
-FROM debian:buster
+# FROM debian:buster
 
-RUN apt-get update && \
-        apt-get install -yqq vsftpd filezilla && \
-            rm -rf /var/lib/apt/list/*
+# RUN apt-get update && \
+#         apt-get install -yqq vsftpd filezilla && \
+#             rm -rf /var/lib/apt/list/*
+
+# COPY conf/vsftpd.conf /tmp/vsftpd.conf
+
+# COPY tools/ftp.sh /tmp/ftp.sh
+
+# #expose 20 and 21 port default ftp
+# EXPOSE 20
+# EXPOSE 21
+
+# ENTRYPOINT ["sh", "/tmp/ftp.sh"]
+
+FROM alpine:3.13
+
+RUN	apk update && apk upgrade && apk add --no-cache \
+        vsftpd
 
 COPY conf/vsftpd.conf /tmp/vsftpd.conf
 
-COPY tools/ftp.sh /tmp/ftp.sh
-
-#expose 20 and 21 port default ftp
-EXPOSE 20
-EXPOSE 21
-
-ENTRYPOINT ["sh", "/tmp/ftp.sh"]
+COPY tools/server_ftp.sh /tmp/server_ftp.sh
+ENTRYPOINT ["sh", "/tmp/server_ftp.sh"]

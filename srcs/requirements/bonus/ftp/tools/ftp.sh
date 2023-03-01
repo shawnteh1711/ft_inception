@@ -5,10 +5,10 @@ if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
     mkdir -p /var/www/html
 
     # back up vsftpd.conf
-    # cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
+    cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
 
     # move edited conf file to original location
-    # mv /tmp/vsftpd.conf /etc/vsftpd/vsftpd.conf
+    mv /tmp/vsftpd.conf /etc/vsftpd/vsftpd.conf
 
     # add a new user
     adduser $FTP_USER --disabled-password
@@ -19,7 +19,7 @@ if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
     # change ownership of /var/www/html
     chown -R $FTP_USER:$FTP_USER /var/www/html
 
-    # add new user specidied in variable ro user list
+    # add new user specified in variable to user list
     echo $FTP_USR | tee -a /etc/vsftpd.userlist &> /dev/null
 else
     echo "FTP started on port 21."
