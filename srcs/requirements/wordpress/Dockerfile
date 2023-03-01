@@ -47,5 +47,5 @@ COPY		tools/wordpress_setup.sh /usr/local/bin/
 RUN		chmod +x /usr/local/bin/wordpress_setup.sh
 WORKDIR		/var/www/html/
 EXPOSE		9000
-ENTRYPOINT	["/usr/local/bin/wp_setup.sh"]
+ENTRYPOINT	["/usr/local/bin/wordpress_setup.sh"]
 CMD		["/usr/sbin/php-fpm7.3", "-F"]
