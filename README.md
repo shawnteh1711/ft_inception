@@ -96,3 +96,5 @@ docker ps
 3. [Reference](https://github.com/twagger/inception)
 4. [Debian Docker installation](https://docs.docker.com/engine/install/debian/)
 5. [Nginx conf](https://www.plesk.com/blog/various/nginx-configuration-guide/#:~:text=Every%20NGINX%20configuration%20file%20will,interchangeably%20as%20blocks%20or%20contexts%20.)
+6. [Guide](https://github.com/vbachele/Inception)
+7. [More Guide](https://github.com/codesshaman/inception/blob/main/00_INSTALL_SYSTEM.md)
