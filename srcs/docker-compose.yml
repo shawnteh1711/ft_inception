@@ -62,21 +62,28 @@ services:
       - .env
     restart: on-failure
 
+  redis:
+    container_name: redis-container
+    image: redis
+    build:
+      context: ./requirements/bonus/redis
+      dockerfile: Dockerfile
+    ports:
+      - 6379:6379
+    volumes:
+      - wordpress_srcs:/var/www/html
+    networks:
+      - default_network
+    env_file:
+      - .env
+    restart: on-failure
+    
+
 
 networks:
   default_network:
     driver: bridge
     
-# networks:
-#   default_network:
-#     driver: bridge
-#     ipam:
-#       driver: default
-#       config:
-#         - subnet: 192.168.0.0/24
-#           gateway: 192.168.0.1
-#           ip_range: 192.168.0.0/24
-
 volumes:
   wordpress_srcs:
     driver: local
