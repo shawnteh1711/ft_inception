@@ -50,7 +50,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3306:3306
-    user: root
+    # user: root
     volumes:
       - mariadb_srcs:/var/lib/mysql
       # - /home/shawn/data/mariadb:/var/www/html
