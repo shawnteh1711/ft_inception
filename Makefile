@@ -34,7 +34,7 @@ fclean: clean
 		docker system prune -a -f
 		# docker volume rm $$(docker volume ls -q)
 ps:
-		docker-compose -f ($COMPOSE_YML) ps
+		docker-compose -f $(COMPOSE_YML) ps
 
 re: fclean build_up
 
