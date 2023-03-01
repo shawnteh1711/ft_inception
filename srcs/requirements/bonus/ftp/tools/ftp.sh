@@ -20,7 +20,7 @@ if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
     chown -R $FTP_USER:$FTP_USER /var/www/html
 
     # add new user specified in variable to user list
-    echo $FTP_USR | tee -a /etc/vsftpd.userlist &> /dev/null
+    echo $FTP_USER | tee -a /etc/vsftpd.userlist &> /dev/null
 else
     echo "FTP started on port 21."
 fi
