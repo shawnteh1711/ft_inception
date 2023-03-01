@@ -14,6 +14,15 @@ if [ ! -f ./wp-config.php ]; then
     # Remove the archive and wordpress files
     rm -rf latest.tar.gz && rm -rf wordpress
 
+    # Change configuration directly without using wp cli
+    # sed -i "s/username_here/$MYSQL_USER/g" wp-config-sample.php
+    # sed -i "s/password_here/$MYSQL_PASSWORD/g" wp-config-sample.php
+    # sed -i "s/localhost/$MYSQL_HOSTNAME/g" wp-config-sample.php
+    # sed -i "s/database_name_here/$MYSQL_DATABASE/g" wp-config-sample.php
+
+    # copy wp-config-sample.php into wp-config.php
+    # cp wp-config-sample.php wp-config.php
+
     # Download wp core files
     wp core download --allow-root
 
@@ -26,14 +35,15 @@ if [ ! -f ./wp-config.php ]; then
     # Create user
     wp user create $GENERAL_USER $GENERAL_EMAIL --user_pass=$GENERAL_PASSWD --allow-root
 
-    # Change configuration directly without using wp cli
-    # sed -i "s/username_here/$MYSQL_USER/g" wp-config-sample.php
-    # sed -i "s/password_here/$MYSQL_PASSWORD/g" wp-config-sample.php
-    # sed -i "s/localhost/$MYSQL_HOSTNAME/g" wp-config-sample.php
-    # sed -i "s/database_name_here/$MYSQL_DATABASE/g" wp-config-sample.php
+    # Bonus Redis
+    wp config set WP_REDIS_HOST redis --allow-root
+    wp config set WP_REDIS_PORT 6379 --raw --allow-root
+    wp config set WP_CACHE_KEY_SALT $DOMAIN_NAME --allow-root
+    wp config set WP_REDIS_CLIENT phpredis --allow-root
+    wp plugin install redis-cache --activate --allow-root
+    wp plugin update --all --allow-root
+    wp redis enable --allow-root
 
-    # copy wp-config-sample.php into wp-config.php
-    # cp wp-config-sample.php wp-config.php
 else
     echo "Wordpress has already been installed"
 fi

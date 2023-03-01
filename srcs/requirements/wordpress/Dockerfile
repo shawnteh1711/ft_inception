@@ -4,8 +4,14 @@ FROM debian:buster
 # Install necessary tools
 RUN apt-get update && \
 	apt-get upgrade -y && \
-                apt-get install -y wget curl php php-fpm php-mysql mariadb-client && \
-                        rm -rf /var/lib/apt/lists/*
+        apt-get install -y wget curl php php-fpm php-mysql mariadb-client && \
+            rm -rf /var/lib/apt/lists/*
+
+# Install bonus redis tools
+RUN apt-get update && \
+	apt-get upgrade -y && \
+        apt-get install -y redis php-redis && \
+            rm -rf /var/lib/apt/lists/*
 
 # Download and install wp-cli
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
