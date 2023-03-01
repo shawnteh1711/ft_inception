@@ -26,20 +26,6 @@ RUN chmod +x ./mariadb_setup.sh
 # Expose the MariaDB port (default is 3306)
 EXPOSE 3306
 
-# Temporary env 
-# ENV MYSQL_ADMIN="root"
-
-# ENV MYSQL_ADMIN_PASSWORD="rootpassword"
-
-# ENV MYSQL_ROOT_PASSWORD="rootpassword"
-
-# ENV MYSQL_DATABASE="mydb"
-
-# ENV MYSQL_USER="myuser"
-
-# ENV MYSQL_PASSWORD="mypassword"
-
-
 # Define the entry point command for initialization
 ENTRYPOINT ["./mariadb_setup.sh"]
 
