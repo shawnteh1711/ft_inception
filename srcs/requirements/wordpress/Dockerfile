@@ -4,7 +4,7 @@ FROM debian:buster
 # Install necessary tools
 RUN apt-get update && \
 	apt-get upgrade -y && \
-                apt-get install -y wget curl php php-fpm php-mysql mysql-client && \
+                apt-get install -y wget curl php php-fpm php-mysql mariadb-client && \
                         rm -rf /var/lib/apt/lists/*
 
 # Download and install wp-cli
