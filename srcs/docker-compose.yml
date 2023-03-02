@@ -126,6 +126,23 @@ services:
       - .env
     restart: on-failure
 
+  mailhog:
+    container_name: mailhog-container
+    image: mailhog
+    build:
+      context: ./requirements/bonus/mailhog
+      dockerfile: Dockerfile
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - default_network
+    env_file:
+      - .env
+    restart: on-failure
+    
+
+
 networks:
   default_network:
     driver: bridge

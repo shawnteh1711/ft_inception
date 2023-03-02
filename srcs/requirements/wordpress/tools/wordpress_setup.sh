@@ -45,6 +45,13 @@ if [ ! -f ./wp-config.php ]; then
     wp plugin activate redis-cache --allow-root
     wp redis enable --allow-root
 
+    # Bonus Mailhog
+    wp config set WP_MAIL_SMTP_HOST localhost --add --type=constant --allow-root
+    wp config set WP_MAIL_SMTP_PORT 1025 -add --type=constant --allow-root
+    wp config set WP_MAIL_SMTP_AUTHORIZATION false --add --type=constant --allow-root
+    wp config set WP_MAIL_SMTP_ENCRYPTION false --add --type=constant --allow-root
+    wp config set WP_MAIL_SMTP_FROM wordpress@$DOMAIN_NAME --add --type=constant --allow-root
+
 else
     echo "Wordpress has already been installed"
 fi
