@@ -50,7 +50,7 @@ WORKDIR /var/www
 RUN wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php && \
         mv adminer-4.8.1.php index.php && chown -R root:root /var/www/
 
-EXPOSE 9000
+EXPOSE 9020
 
 # Start the PHP built-in web server and serve web content from root directory /var/www
-CMD ["php", "-S", "[::]:9000", "-t", "/var/www"]
+CMD ["php", "-S", "[::]:9020", "-t", "/var/www"]
