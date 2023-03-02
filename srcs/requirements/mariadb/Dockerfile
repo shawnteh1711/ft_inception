@@ -1,6 +1,5 @@
 # Use the official debian image as the base image
-# FROM debian:bullseye-slim
-FROM debian:buster
+FROM debian:bullseye-slim
 
 # Install mariadb server
 RUN apt-get update && \
