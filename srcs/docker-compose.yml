@@ -110,6 +110,20 @@ services:
       - .env
     restart: on-failure
 
+  adminer:
+    container_name: adminer-container
+    image: adminer
+    build:
+      context: ./requirements/bonus/adminer
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+    networks:
+      - default_network
+    env_file:
+      - .env
+    restart: on-failure
+
 networks:
   default_network:
     driver: bridge
