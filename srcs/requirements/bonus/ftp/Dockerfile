@@ -23,7 +23,7 @@ COPY ./conf/vsftpd.conf /tmp/vsftpd.conf
 
 COPY ./tools/ftp.sh /tmp/ftp.sh
 
-# EXPOSE 21
+EXPOSE 21
 
 ENTRYPOINT ["sh", "/tmp/ftp.sh"]
 
