@@ -15,7 +15,7 @@ build_up:
 			docker-compose -f $(COMPOSE_YML) up --build -d
 
 up:
-			docker-compose -f $(COMPOSE_YML) up
+			docker-compose -f $(COMPOSE_YML) up -d
 
 down:		
 			docker-compose -f $(COMPOSE_YML) down
