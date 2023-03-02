@@ -12,7 +12,7 @@ all: build_up
 
 build_up:
 			mkdir -p $(WORDPRESS_SRCS) $(MARIADB_SRCS)
-			docker-compose -f $(COMPOSE_YML) --build -d --no-cache
+			docker-compose -f $(COMPOSE_YML) --build --no-cache
 			# docker-compose -f $(COMPOSE_YML) up --build -d --no-cache
 
 up:
