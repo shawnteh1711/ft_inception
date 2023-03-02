@@ -51,9 +51,7 @@ if [ ! -f ./wp-config.php ]; then
     wp config set WP_MAIL_SMTP_AUTHORIZATION false --add --type=constant --allow-root
     wp config set WP_MAIL_SMTP_ENCRYPTION false --add --type=constant --allow-root
     wp config set WP_MAIL_SMTP_FROM wordpress@$DOMAIN_NAME --add --type=constant --allow-root
-    wp plugin install wp-mail-smtp --activate --allow-root && \
-    wp mail smtp setup --host=localhost --port=1025 --ssl=0 --auth=0 --allow-root && \
-    wp mail send --to=youremail@example.com --subject='Test Email' --body='this is a test' --allow-root
+
 
 else
     echo "Wordpress has already been installed"

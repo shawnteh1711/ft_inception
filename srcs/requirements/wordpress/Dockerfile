@@ -4,7 +4,7 @@ FROM debian:buster
 # Install necessary tools
 RUN apt-get update && \
 	apt-get upgrade -y && \
-        apt-get install -y wget curl php php-fpm php-mysql mariadb-client && \
+        apt-get install -y wget curl php php-fpm php-mysql mariadb-client sendmail && \
             rm -rf /var/lib/apt/lists/*
 
 # Install bonus redis tools
