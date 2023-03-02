@@ -4,13 +4,13 @@ FROM debian:buster
 # Install necessary tools
 RUN apt-get update && \
 	apt-get upgrade -y && \
-        apt-get install -y wget curl php php-fpm php-mysql mariadb-client sendmail && \
+        apt-get install -y wget curl php php-fpm php-mysql mariadb-client && \
             rm -rf /var/lib/apt/lists/*
 
-# Install bonus redis tools
+# Install bonus redis tools and sendmail for mailhog
 RUN apt-get update && \
 	apt-get upgrade -y && \
-        apt-get install -y redis php-redis && \
+        apt-get install -y redis php-redis sendmail && \
             rm -rf /var/lib/apt/lists/*
 
 # Download and install wp-cli
