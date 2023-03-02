@@ -8,8 +8,7 @@ if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
     cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
 
     # move edited conf file to original location
-    # mv /tmp/vsftpd.conf /etc/vsftpd/vsftpd.conf
-    mv ./vsftpd.conf /etc/vsftpd/vsftpd.conf
+    mv /tmp/vsftpd.conf /etc/vsftpd/vsftpd.conf
 
     # add a new user
     adduser $FTP_USER --disabled-password
