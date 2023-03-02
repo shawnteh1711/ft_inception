@@ -88,8 +88,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 21:21
-      - 20:20
-      - 21100-21110:21100-21110
     volumes:
       - wordpress_srcs:/var/www/html
     networks:
