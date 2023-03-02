@@ -8,7 +8,7 @@ RUN apt-get update && \
 
 # Copy default NGINX configuration
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
-COPY ./conf/index.html /var/www/html/index.html
+COPY ./tools/index.html /var/www/html/index.html
 
 
 EXPOSE 8080
