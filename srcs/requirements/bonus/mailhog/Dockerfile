@@ -2,7 +2,7 @@ FROM debian:bullseye-slim
 
 # Install required packages
 RUN apt-get update && \
-    apt-get install -y curl ca-certificates golang-go && \
+    apt-get install -y curl ca-certificates golang-go git && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and install Mailhog
