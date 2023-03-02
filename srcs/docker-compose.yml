@@ -112,10 +112,6 @@ services:
       - .env
     restart: on-failure
 
-
-    
-
-
 networks:
   default_network:
     driver: bridge

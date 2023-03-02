@@ -10,7 +10,6 @@ RUN apt-get update && \
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 COPY ./tools/index.html /var/www/html/index.html
 
-
 EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
