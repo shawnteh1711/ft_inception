@@ -97,6 +97,22 @@ services:
     env_file:
       - .env
     restart: on-failure
+  
+  static:
+    container_name: static-container
+    image: static
+    build:
+      context: ./requirements/bonus/static
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    networks:
+      - default_network
+    env_file:
+      - .env
+    restart: on-failure
+
+
     
 
 
