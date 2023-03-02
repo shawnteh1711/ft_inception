@@ -117,7 +117,7 @@ services:
       context: ./requirements/bonus/adminer
       dockerfile: Dockerfile
     ports:
-      - 9000:9000
+      - 9000
     networks:
       - default_network
     env_file:
