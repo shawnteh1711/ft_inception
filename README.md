@@ -1,5 +1,12 @@
 # ft_inception
 
+# Things to install in vm 
+```
+apt install -y sudo ufw docker docker-compose make openbox xinit kitty firefox-esr filezilla
+make ps
+
+```
+
 # Components of Docker
 1. Docker Engine
 Docer Egine is the base engine installed on your host machine to build and run containers using Docker components and services. It uses a client-server architecture. 
@@ -89,6 +96,7 @@ docker exec -it <container_id> <arg>
 mysql -proot
 docker ps
 ```
+
 
 ## Resouces
 1. [Docker Tutorial](https://www.youtube.com/watch?v=rOTqprHv1YE)

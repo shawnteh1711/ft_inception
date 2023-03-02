@@ -3,6 +3,7 @@ FROM debian:bullseye-slim
 # Install required packages
 RUN apt-get update && \
     apt-get install -y curl ca-certificates golang-go git && \
+    # apt-get install -y curl ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and install Mailhog
@@ -14,7 +15,11 @@ RUN curl -L https://github.com/mailhog/MailHog/releases/download/v1.0.0/MailHog_
 #     chmod 0755 /usr/bin/mhsendmail && \
 #     echo 'sendmail_path = "/usr/bin/mhsendmail --smtp-addr=mailhog:1025"' > /usr/local/etc/php/php.ini;
 
-RUN go get github.com/mailhog/mhsendmail
+# RUN go get github.com/mailhog/mhsendmail
+
+RUN go get github.com/mailhog/mhsendmail && \
+    cp /go/bin/mhsendmail /usr/local/bin && \
+    chmod +x /usr/local/bin/mhsendmail
 
 # Expose the SMTP and HTTP ports
 EXPOSE 1025 8025
