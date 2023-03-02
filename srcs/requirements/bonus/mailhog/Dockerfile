@@ -10,9 +10,9 @@ RUN curl -L https://github.com/mailhog/MailHog/releases/download/v1.0.0/MailHog_
     chmod +x /usr/local/bin/MailHog
 
 # Install mhsendmail
-RUN curl -LkSso /usr/bin/mhsendmail 'https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64' && \
-    chmod 0755 /usr/bin/mhsendmail && \
-    echo 'sendmail_path = "/usr/bin/mhsendmail --smtp-addr=mailhog:1025"' > /usr/local/etc/php/php.ini;
+# RUN curl -LkSso /usr/bin/mhsendmail 'https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64' && \
+#     chmod 0755 /usr/bin/mhsendmail && \
+#     echo 'sendmail_path = "/usr/bin/mhsendmail --smtp-addr=mailhog:1025"' > /usr/local/etc/php/php.ini;
 
 RUN go get github.com/mailhog/mhsendmail
 
