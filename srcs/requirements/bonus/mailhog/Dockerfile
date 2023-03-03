@@ -2,7 +2,7 @@ FROM debian:bullseye-slim
 
 # Install required packages
 RUN apt-get update && \
-    apt-get install -yqq curl ca-certificates golang-go git netcat && \
+    apt-get install -yqq curl ca-certificates golang-go git netcat supervisor && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and install Mailhog
