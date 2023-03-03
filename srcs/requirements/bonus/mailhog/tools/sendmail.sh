@@ -9,8 +9,5 @@ done
 # Send a test email using mhsendmail
 echo -e "Subject: Test Email\n\nThis is a test email from mhsendmail" | /usr/local/bin/mhsendmail --smtp-addr=localhost:1025 recipient@example.com
 
-# Run the command passed as an argument to the script
-# exec "$@"
-
 # Add an infinite loop to prevent the container from exiting
-while true; do sleep 1; done
+# while true; do sleep 1; done
