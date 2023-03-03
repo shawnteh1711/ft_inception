@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Set Mailhog UI autorefresh to false
-export MH_UI_AUTOREFRESH=false
-
 # Start Mailhog service
 /usr/local/bin/MailHog &
 
