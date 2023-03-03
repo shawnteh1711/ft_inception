@@ -13,4 +13,4 @@ done
 echo -e "Subject: Test Email\n\nThis is a test emails from mhsendmail" | /usr/local/bin/mhsendmail --smtp-addr=localhost:1025 recipient@example.com
 
 # Run command in Dockerfile
-exec "$@"
+# exec "$@"
