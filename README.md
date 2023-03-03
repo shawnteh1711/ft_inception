@@ -97,6 +97,31 @@ mysql -proot
 docker ps
 ```
 
+# Test Redis
+```
+Start the Redis CLI by typing redis-cli and pressing Enter.
+
+Check if Redis is working by typing ping and pressing Enter. If Redis is working, the CLI will return PONG.
+
+Set a key-value pair by typing set key value and pressing Enter, where key is the name of the key and value is the value to be stored. For example, set name John.
+
+Retrieve the value of the key by typing get key and pressing Enter, where key is the name of the key. For example, get name. If the key exists, the CLI will return its value.
+
+Retrieve all keys by typing keys * and pressing Enter. This will return a list of all keys stored in Redis.
+
+DEBUG OBJECT key
+```
+
+# Test ftp using ncftp
+```
+ncftp ENTER
+open -u ftpuser -p ftpass 127.0.0.1
+get server file
+get -R server folder
+put local file
+put -R local file
+
+
 
 ## Resouces
 1. [Docker Tutorial](https://www.youtube.com/watch?v=rOTqprHv1YE)
