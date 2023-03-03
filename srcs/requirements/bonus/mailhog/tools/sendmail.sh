@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start Mailhog service
-# /usr/local/bin/MailHog &
+/usr/local/bin/MailHog &
 
 # Wait until Mailhog is ready
 until nc -z localhost 8025; do

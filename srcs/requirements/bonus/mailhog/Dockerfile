@@ -27,13 +27,13 @@ RUN chmod +x /usr/local/bin/sendmail.sh
 EXPOSE 1025 8025
 
 # # Set the entrypoint to script
-# ENTRYPOINT ["/usr/local/bin/sendmail.sh"]
+ENTRYPOINT ["/usr/local/bin/sendmail.sh"]
 
 # # Start Mailhog when the container starts
-# CMD ["/usr/local/bin/MailHog"]
+CMD ["/usr/local/bin/MailHog"]
 
 # Start Mailhog and run the script when the container starts
 # CMD ["sh", "-c", "/usr/local/bin/MailHog & sleep 5 && /usr/local/bin/sendmail.sh"]
 
 # Start Mailhog and run the script when the container starts
-CMD ["sh", "-c", "/usr/local/bin/MailHog & /usr/local/bin/sendmail.sh"]
+# CMD ["sh", "-c", "/usr/local/bin/MailHog & /usr/local/bin/sendmail.sh"]
