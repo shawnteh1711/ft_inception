@@ -30,7 +30,7 @@ EXPOSE 1025 8025
 ENTRYPOINT ["/usr/local/bin/sendmail.sh"]
 
 # # Start Mailhog when the container starts
-CMD ["/usr/local/bin/MailHog"]
+CMD ["MailHog"]
 # CMD ["sh", "-c", "/usr/local/bin/sendmail.sh"]
 
 # Start Mailhog and run the script when the container starts
