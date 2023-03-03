@@ -49,14 +49,15 @@ With Docker Compose, you can define a multi-container application in a single YA
 
 3. Complexity: Docker introduces an additional layer of complexity to the deployment proces, requiring additional expertise and tools to manage containerized applications.
 
+![Structure comparison between Vm and Docker](structure.png)
+
+
 # Things to install in vm 
 ```
 apt install -y sudo ufw docker docker-compose make openbox xinit kitty firefox-esr filezilla
 make ps
 
 ```
-![Structure comparison between Vm and Docker]
-(structure.png)
 
 # Components of Docker
 1. Docker Engine
