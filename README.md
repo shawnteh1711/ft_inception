@@ -1,11 +1,61 @@
 # ft_inception
 
+# How Docker and docker compose work
+Docker is a containerization platform that allow developers to package application and their dependencies into portable and self-contained containers.
+This allow
+- applications to run in a consistent and isolated environment
+- lightweight and isolated make them an ideal choice for deploying microservices
+Docker Compose is a tool that allows you to define and run multi-container Docker applications. It allow
+- simple way to manage dependencies between containers
+- configuration of network and storage requirement of application using YAML file
+
+# Containerization technology use in Docker
+1. Namespace: used to isolate processes so they can't see or interact with processes running in other namespaces. This is what enables containers to be isolated from one another and from the host system.
+
+2. Control groups (cgroups): a kernel feature that allows resource usage to be limited and shared among groups of processes. This is how Docker can control the amount of resources each container uses.
+
+3. Union file system: a way to layer file system on top of each other, where the contents of files in the upper layer "override" the contents in the lower layers. This is how Docker can create images that are based on other images, with addition layers added on top.
+
+4. Container format: Docker uses a container format based on the linux Container (LXC) format, but with some modification to improve security and portability.
+
+# Difference between a Docker image used with docker compose and without docker compose
+A Docker image is a packaged, standalone executable package that contains all the necessary dependencies and configuration to run in an application.
+When using Docker without Compose, you typically build a Docker image for each individual application component and manually run and link them using Docker network command.
+
+```
+docker network create my-network
+docker run --name container1 --network my-network -d image1
+docker run --name container2 --network my-network -d image2
+```
+This can be time-consuming and error-prone, especially when working with large or complex applications.
+
+With Docker Compose, you can define a multi-container application in a single YAML file, which makes it easier to manage and deply complex applications. You can specify the configuration for each container include dependencies and network settinfs, and then start the application with a single command. Docker Compose will automatically build and start the necessary containers and confifure them to work together.
+
+# The benefit of Docker compared to VMs
+1. lightweight: Docker container are much lighter than VMs, as they don't need to run a seperate operating system. Instead, Docker container share the host operating system kernel and only include minimal dependencies required to run the application.
+
+2. Faster startup: Docker containers can start much faster than VMs, as they only need to start the application process and not an entire operating system.
+
+3. Resource efficient: Since Docker containers share the host operating system kernel, they use fewer resources compared to VMs, making them more efficient in terms of CPU, memory  and disk usage.
+
+4. Consistent environment: Docker allows developers to create and run applications in the same environment, ensuring consistency across different machines and reducing the risk of application issues caused by environmental differences.
+
+5. Protability: Docker containers can run on any machine with Docker installed regardless of underlying operating system or hardware.
+
+# Disadvantage of docker to vm
+1. Security: Docker containers share the host kernel, which means that if the host system is compromised, all the containers on that system are also at risk. 
+
+2. Resource sharing: Since Docker containers share the host kernel, they cannot have their own kernel modules or system libraries, which can limit their ability to utilize certain resources or perform certain tasks.
+
+3. Complexity: Docker introduces an additional layer of complexity to the deployment proces, requiring additional expertise and tools to manage containerized applications.
+
 # Things to install in vm 
 ```
 apt install -y sudo ufw docker docker-compose make openbox xinit kitty firefox-esr filezilla
 make ps
 
 ```
+https://media.licdn.com/dms/image/C4D12AQE8eZPFE0ITNw/article-inline_image-shrink_1500_2232/0/1650686504419?e=1683158400&v=beta&t=NS7NpVPKGX6JuPCHGuY-aCfFHTYAry00wL_ygp_GJZM
 
 # Components of Docker
 1. Docker Engine
