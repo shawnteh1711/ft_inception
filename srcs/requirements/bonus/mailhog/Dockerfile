@@ -22,12 +22,16 @@ RUN go get github.com/mailhog/mhsendmail && \
 # Copy the sendmail script
 COPY ./tools/sendmail.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/sendmail.sh
+COPY ./conf/supervisord.conf /etc/supervisor/conf.d/
+
+# Set the entrypoint to supervisord
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
 
 # Expose the SMTP and HTTP ports
 EXPOSE 1025 8025
 
 # # Set the entrypoint to script
-ENTRYPOINT ["/usr/local/bin/sendmail.sh"]
+# ENTRYPOINT ["/usr/local/bin/sendmail.sh"]
 
 # # Start Mailhog when the container starts
 # CMD ["MailHog"]
