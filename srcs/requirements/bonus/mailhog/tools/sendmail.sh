@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Wait until Mailhog is ready
-until nc -z localhost 1025; do
+until nc -z localhost 8025; do
     echo "Mailhog is not ready yet. Retrying..."
     sleep 1
 done
