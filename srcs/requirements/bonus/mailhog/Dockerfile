@@ -25,7 +25,7 @@ RUN chmod +x /usr/local/bin/sendmail.sh
 COPY ./conf/supervisord.conf /etc/supervisor/conf.d/
 
 # Set the entrypoint to supervisord
-ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 # Expose the SMTP and HTTP ports
 EXPOSE 1025 8025
