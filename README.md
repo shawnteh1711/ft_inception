@@ -56,7 +56,7 @@ make ps
 
 ```
 ![Structure comparison between Vm and Docker]
-(./structure.png)
+(structure.png)
 
 # Components of Docker
 1. Docker Engine
