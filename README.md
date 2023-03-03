@@ -200,6 +200,14 @@ put local file
 put -R local file
 ```
 
+# Test Mailhog
+MailHog is a tool used for email testing that allows developers to test email sending without actually sending email to real users. With MailHog, developers can receive emails sent by their application or website and view them in web-based interface.
+
+SMTP(Simple Mail Transfer Protocol) is the protocol used for sending email messages between servers. It's responsible for delivering emails from sender's mail server to the recipient's mail server. In simple terms, SMTP is the communication protocol that allows emails to be sent and received over the internet.
+
+
+using mhsendmail to send email to smtp mailhogUI on localhost:8025. I use supervisor so that mailhog and sendmail.sh can run without mailhog container down.
+
 
 
 ## Resouces
