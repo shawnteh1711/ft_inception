@@ -10,4 +10,4 @@ done
 echo -e "Subject: Test Email\n\nThis is a test email from mhsendmail" | /usr/local/bin/mhsendmail --smtp-addr=localhost:1025 recipient@example.com
 
 # Add an infinite loop to prevent the container from exiting
-# while true; do sleep 1; done
+while true; do sleep 1; done

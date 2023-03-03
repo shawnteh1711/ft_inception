@@ -33,5 +33,4 @@ EXPOSE 1025 8025
 # CMD ["MailHog"]
 
 # Start Mailhog and run the script when the container starts
-# CMD ["sh", "-c", "/usr/local/bin/MailHog & sleep 5 && /usr/local/bin/sendmail.sh"]
-CMD ["sh", "-c", "MailHog", "sleep 5", "/usr/local/bin/sendmail.sh"]
+CMD ["sh", "-c", "/usr/local/bin/MailHog & sleep 5 && /usr/local/bin/sendmail.sh"]
