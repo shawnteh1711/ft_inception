@@ -49,6 +49,32 @@ With Docker Compose, you can define a multi-container application in a single YA
 
 3. Complexity: Docker introduces an additional layer of complexity to the deployment proces, requiring additional expertise and tools to manage containerized applications.
 
+Some senarios where we use VMs instead of Docker
+1. When you need to run multiple different operatins systems on the same hardware. 
+
+2. When you need to run applications that require direct hardware access, such as high-performance computing or machine learning applications.
+
+3. When you need to run legacy (older app that may still in use but is no longet actively developed or supported) applications that cannot containerized easily.
+
+4. When you need to enforce strict security boundaries between applications or users.
+
+5. When you need to run applications that require different kernel version
+
+# The pertinence of the directory structure required for this project 
+
+The directory structure required for Docker is important as it determines how the Docker images and containers will be built and run . The basic directory structure for a Docker application is 
+
+```
+.
+├── docker-compose.yml
+└── app
+    ├── container1
+    ├── container2
+    └── ...
+```
+
+This is important to follow this directory structure as it allows for easy management of the application and its dependencies. It also ensures that the application can be easily deployed to different environtment witout modification.
+
 ![Structure comparison between Vm and Docker](structure.png)
 
 
