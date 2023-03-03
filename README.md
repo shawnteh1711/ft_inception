@@ -56,7 +56,7 @@ make ps
 
 ```
 ![Structure comparison between Vm and Docker]
-(https://media.licdn.com/dms/image/C4D12AQE8eZPFE0ITNw/article-inline_image-shrink_1500_2232/0/1650686504419?e=1683158400&v=beta&t=NS7NpVPKGX6JuPCHGuY-aCfFHTYAry00wL_ygp_GJZM)
+(/Users/bocal/ft_inception/structure.png)
 
 # Components of Docker
 1. Docker Engine
