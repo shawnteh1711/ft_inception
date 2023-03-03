@@ -3,7 +3,6 @@ FROM debian:bullseye-slim
 # Install required packages
 RUN apt-get update && \
     apt-get install -yqq curl ca-certificates golang-go git netcat && \
-    # apt-get install -yqq curl ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and install Mailhog
@@ -27,8 +26,11 @@ RUN chmod +x /usr/local/bin/sendmail.sh
 # Expose the SMTP and HTTP ports
 EXPOSE 1025 8025
 
-# Set the entrypoint to script
-ENTRYPOINT ["/usr/local/bin/sendmail.sh"]
+# # Set the entrypoint to script
+# ENTRYPOINT ["/usr/local/bin/sendmail.sh"]
 
-# Start Mailhog when the container starts
-CMD ["MailHog"]
+# # Start Mailhog when the container starts
+# CMD ["MailHog"]
+
+# Start Mailhog and run the script when the container starts
+CMD ["sh", "-c", "/usr/local/bin/MailHog & sleep 5 && /usr/local/bin/sendmail.sh"]
